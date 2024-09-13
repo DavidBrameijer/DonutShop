@@ -21,11 +21,17 @@ export class DonutService {
 
   cart:DonutDetailsModel[] = [];
 
-  addDonutToCart(d:DonutDetailsModel){
+  addToCart(d:DonutDetailsModel){
     this.cart.push(d);
+    console.log(this.cart);
   }
 
-  resetCart(){
-    this.cart = [];
+  removeFromCart(d:DonutDetailsModel){
+    let index:number = this.cart.findIndex(x => x === d);
+    this.cart.splice(index, 1);
   }
+
+  // resetCart(){
+  //   this.cart = [];
+  // }
 }

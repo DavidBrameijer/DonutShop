@@ -1,6 +1,8 @@
 <h1>{{donutDetails.name}}</h1>
 <button (click)="addToCart()">Add to Cart</button>
-<p>{{donutDetails.calories}}</p>
-<p>{{donutDetails.extras}}</p>
-<img [src]="donutDetails.photo" />
+<p>Colories: {{donutDetails.calories}}</p>
+@for (e of donutDetails.extras; track $index) {
+    <p>{{e}}</p>
+}
+<img height="200px" [src]="donutDetails.photo" />
 <a [href]="donutDetails.photo_attribution">Click here for photo attribution details</a>

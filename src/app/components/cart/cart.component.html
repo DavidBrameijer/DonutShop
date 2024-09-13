@@ -1,1 +1,25 @@
-<p>cart works!</p>
+<h1>Cart</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Calories</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (d of getCart(); track $index) {
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.calories}}</td>
+                <td>$1.00</td>
+                <td><button (click)="removeDonut(d)">X</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>Total Calories: {{getCalories()}}</p>
+<p>Total Price: {{getCart().length | currency}}</p>

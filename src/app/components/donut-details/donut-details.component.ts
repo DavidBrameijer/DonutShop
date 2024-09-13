@@ -26,6 +26,6 @@ export class DonutDetailsComponent {
   }
 
   addToCart(){
-    this.donutService.addDonutToCart(this.donutDetails)
+    this.donutService.addToCart(this.donutDetails)
   }
 }

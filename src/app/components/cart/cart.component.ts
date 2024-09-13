@@ -19,8 +19,11 @@ export class CartComponent {
     return this.donutService.cart;
   }
 
-  buy(){
-    this.donutService.resetCart();
+  getCalories():number{
+    return this.getCart().reduce((total, current) => total += current.calories, 0)
   }
 
+  removeDonut(d:DonutDetailsModel){
+    this.donutService.removeFromCart(d);
+  }
 }
